@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>Charriott | Booking</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="layout.css" rel="stylesheet" type="text/css" />
+  <script src="maxheight.js" type="text/javascript"></script>
+  <!--[if lt IE 7]>
+<link href="ie_style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="ie_png.js"></script>
+<script type="text/javascript">ie_png.fix('.png, #header .row-2, #header .nav li a, #content, .gallery li');</script>
+<![endif]-->
+</head>
+
+<body id="page5" onload="new ElementMaxHeight();">
+  <div id="main">
+    <!-- header -->
+    <div id="header">
+      <div class="row-1">
+        <div class="wrapper">
+          <div class="logo">
+            <h1><a href="#">Charriott</a></h1>
+            <em>Hotel</em> <strong>True Luxury</strong>
+          </div>
+
+        </div>
+      </div>
+      <div class="row-2">
+        <div class="indent">
+          <!-- header-box begin -->
+          <div class="header-box">
+            <div class="inner">
+              <ul class="nav">
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="checkin.html"> Check In</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="checkout.html">Check Out</a></li>
+                <li><a href="#">#</a></li>
+                ≈
+              </ul>
+            </div>
+          </div>
+          <!-- header-box end -->
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+    <div id="content">
+      <div class="wrapper">
+       S
+        <div class="content">
+          <div class="indent">
+            <h2>Welcome</h2>
+            <!----Second table----->
+            <style>
+            
+
+              input[type=text],
+              input[type=email],
+              input[type=date],
+              input[type=tel],
+
+              select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border-radius: 4px;
+                box-sizing: border-box;
+              }
+
+              .button {
+                padding: 2px;
+                font: bold .6em sans-serif;
+                border: 2px solid rgb(5, 181, 187);
+                border-radius: 5px;
+                cursor: pointer;
+              }
+
+              button:hover,
+              button:focus {
+                outline: none;
+                background: rgb(174, 193, 230);
+                color: #FFF;
+              }
+
+              input[type=submit] {
+                width: 100%;
+                background-color: #659bb4;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+              }
+
+              input[type=submit]:hover {
+                background-color: #367383;
+              }
+            </style>
+            
+            <div class="desk">
+              <form class="reception">
+                <label for="fname">First Name
+                </label>
+                <input type="text" id="fname" name="fname"><br>
+
+                <label for="lname">Last Name
+                </label>
+                <input type="text" id="lname" name="lname"><br>
+
+                <label for="email">Eamil</label>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address"><br>
+
+                <label for="phn">Contact Number</label>
+                <input type="tel" id="phn" name="phn" pattern="[0-9]"><br>
+
+              <div class="field">
+                <label for="bookingmode">Booking Mode:</label>
+                <select name="bookingmode" id="mode">
+                  <option value="#"></option>
+                  <option  value="0">online</option>
+                  <option  value="1">offline</option>
+                </select>
+              </div>
+
+            </form>
+
+              <br>
+              <br>
+
+              <!------------CHEK IN N SUBMIT--------->
+              <div class="field">
+                <label>Check In:</label>
+                <input type="date" id="checkin_date" name="checkin_date" value="2021-05-08"
+                min="2021-05-01" max="2021-12-31">
+
+              </div>
+              <br>
+              <br>
+
+              <div class="field">
+                <label>Check Out:</label>
+                <input type="date" id="checkout_date" name="checkout_date" value="2021-25-08"
+                min="2021-05-01" max="2021-12-31">
+               </div>
+<br>
+              <div>
+                <div class="button"><span><span><a href="#">Submit</a></span></span></div>
+              </div>
+            </div>
+            <br>
+            <!------------------------------------------->
+            <h2>Room Available </h2>
+            <!------------------------------------------->
+            <style>
+              table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+              }
+
+              td,
+              th {
+                border: 1px solid #7e4242;
+                text-align: left;
+                padding: 8px;
+              }
+
+              tr:nth-child(even) {
+                background-color: #dddddd;
+              }
+            </style>
+            <table>
+              <tr>
+                <th>Room No</th>
+                <th>Room Category</th>
+                <th>Room type</th>
+                <th>Bed Size</th>
+                <th>Bed Count</th>
+                <th>Check Box</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+            <!-------------->
+            <div class="field">
+              <label for="status">Booking Status:</label>
+              <select name="status" id="status">
+                <option value="#"></option>
+                <option  id="0">confirmed</option>
+                <option  id="1">cancel</option>
+                <option  id="2">Pending</option>
+              </select>
+            </div>
+            <br>
+            <br>
+
+            <!------------------------------->
+            <div class="button"><span><span><a href="#">Check Availability</a></span></span></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div id="footer">
+      <div class="wrapper">
+        <div class="fleft">Copyright &copy; 2009 <a href="#">Name Here</a>. All Rights Reserved</div>
+    </div>
+  </div>
+</body>
+
+</html>
