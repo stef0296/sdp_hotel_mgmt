@@ -1,0 +1,101 @@
+1. Select statement for getting hotel list
+    hotel_master
+    - hotel_id
+    - hotel_name - location_name(location_master)
+
+2. Select statement for getting available rooms
+    room_details
+    - room_no
+    - room_category (rcat_code)
+    - room_type (rtype_code)
+    - bed_type (bed_desc, bed_count)
+    - room_price
+    where room_id in *available rooms*
+show available rooms based on the arrival and departure dates
+
+3. Select statement for checking available rooms (view)
+room_details
+booking_trn
+reservation_det
+checkin_trn
+checkout_trn
+
+@arr_date;
+@dep_date
+
+query_1
+select distinct room_id from booking_trn
+left join on reservation_det on res_book_id = book_id
+left join on checkin_trn on cin_book_id = book_id
+where 
+(cin_id is not null)
+or
+(
+    arrival_date between @arr_date and @dep_date
+    and departure_date between @arr_date and @dep_date
+);
+
+
+query_2 (view)
+select room_id, <other-columns> from room_details
+where 
+room_id not in query_1
+and
+room_status is null;
+
+
+----------------------------
+
+Insert statement for booking_trn
+datetime (sql sys time)
+@hotel_id (dropdown - int)
+@employee_id (hardcoded)
+@book_type (dropdown - int)
+@discount (decimal) null
+@book_arrival_date (dd-mm-yyyy)
+@book_departure_date (dd-mm-yyyy)
+@book_total_days (calc diff between ad and dd)
+@book_cust_fName
+@book_cust_mName null
+@book_cust_lName
+@book_cust_doc_id  null
+@book_cust_address
+@book_cust_ph_num
+@book_cust_email
+@book_status (dropdown - int)
+@room_id (allow only one room for now)
+**will allow multiple rooms in improvements**
+@room_price (decimal) not null
+
+@arr_date = convert book_arrival_date from string to date
+@dep_date = convert book_departure_date from string to date
+@total_days date_diff(@arr_date, @dep_date);
+
+@createDT = now();
+
+insert into booking_trn
+book_datetime = @createDT,
+book_hotel_id = @hotel_id
+book_employee_id = @employee_id,
+book_type = @book_type,
+book_discount = @discount,
+book_arrival_date = @arr_date,
+book_departure_date = @dep_date,
+book_total_days = @total_days,
+book_cust_fName = @book_cust_fName,
+book_cust_mName = @book_cust_mName,
+book_cust_lName = @book_cust_lName,
+book_cust_doc_id = @book_cust_doc_id,
+book_cust_address = @book_cust_address,
+book_cust_ph_num = @book_cust_ph_num,
+book_cust_email = @book_cust_email,
+book_status = @book_status;
+
+select last insert id for @book_id;
+
+insert into reservation table
+res_book_id = @book_id,
+res_room_id = @room_id,
+res_room_price = @room_price;
+
+select @book_id;

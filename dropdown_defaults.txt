@@ -1,0 +1,27 @@
+online/offline booking
+[
+    {
+        id: 0,
+        label: 'Online',
+    },
+    {
+        id: 1,
+        label: 'Offline',
+    }
+]
+
+booking status
+[
+    {
+        id: 0,
+        label: 'Confirmed',
+    },
+    {
+        id: 1,
+        label: 'Cancelled',
+    },
+    {
+        id: 2,
+        label: 'Pending',
+    },
+]
