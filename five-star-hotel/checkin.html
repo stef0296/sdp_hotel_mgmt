@@ -46,177 +46,169 @@
             </div>
         </div>
         <!-- content -->
+        <style>
+            input[type=text],
+            input[type=service],
+            input[type=date],
+            select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            .button {
+                padding: 2px;
+                font: bold .6em sans-serif;
+                border: 2px solid rgb(5, 181, 187);
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover,
+            button:focus {
+                outline: none;
+                background: rgb(174, 193, 230);
+                color: #FFF;
+            }
+
+            input[type=submit] {
+                width: 100%;
+                background-color: #659bb4;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #367383;
+            }
+
+
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td,
+            th {
+                border: 1px solid #7e4242;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+
+
         <div id="content">
-            <div class="gallery">
-                <ul>
-                    <li><a href="#"><img alt="" src="images/2page-img1.jpg" /></a></li>
-                    <li><a href="#"><img alt="" src="images/2page-img2.jpg" /></a></li>
-                    <li><a href="#"><img alt="" src="images/2page-img3.jpg" /></a></li>
-                    <li><a href="#"><img alt="" src="images/2page-img4.jpg" /></a></li>
-                    <li><a href="#"><img alt="" src="images/2page-img5.jpg" /></a></li>
-                    <li><a href="#"><img alt="" src="images/2page-img6.jpg" /></a></li>
-                </ul>
-            </div>
-            <div class="container">
+            <div class="wrapper">
                 <div class="aside maxheight">
+                    <!-- box begin -->
+                    <div class="box maxheight">
+                        <div class="inner">
+                            <h3>Reservation</h3>
+                            <div>
+                                <label for="hotel_id">Hotel</label>
+                                <input type="text" id="hotel_id" name="hotel_id"><br><br>
+
+                                <label for="start">Check-in date:</label>
+
+                                <input type="date" id="checkin_date" name="checkin_date" value="08-06-2021"
+                                    min="08-06-021" max="2021-12-31">
+
+                                <label for="start">Check-Out date:</label>
+
+                                <input type="date" id="checkout_date" name="checkout_date" value="16-06-2021"
+                                    min="16-06-2021" max="2021-12-31">
+
+                                <input type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- box end -->
                 </div>
                 <div class="content">
                     <div class="indent">
-                        <!--------------check in-------------->
+                        <h2>Customer Information</h2>
+                        <div>
+
+                            <label for="fname">First name:</label><br>
+                            <input type="text" id="fname" name="fname" value=""><br>
+
+                            <label for="lname">Last name:</label><br>
+                            <input type="text" id="lname" name="lname" value=""><br>
+
+                            <label for="address">Address:</label><br>
+                            <input type="text" id="address" name="address" value=""><br>
+
+                            <label for="Email_add">Email Address:</label><br>
+                            <input type="text" id="Email_add" name="Email_add" value=""><br>
+
+                            <label for="Phone_no">Mobile Number:</label><br>
+                            <input type="text" id="Phone_no" name="Phone_no" value=""><br>
+
+                        </div>
+
+                        <div>
+                            <h2>Rooms available</h2>
+                            <table>
+                                <tr>
+                                    <th>Room No.</th>
+                                    <th>Room Catrgory</th>
+                                    <th>Bed size</th>
+                                    <th>No. of beds</th>
+                                    <th>Type</th>
+                                    <th>Price</th>
+
+                                </tr>
+                                <tr>
+                                    <!--for loop-->
+                                    <td>724</td>
+                                    <td>Princess Suit</td>
+                                    <td>QueenSize</td>
+                                    <td>1</td>
+                                    <td>VIP</td>
+                                    <td>3000 Euro</td>
+                                </tr>
+
+                            </table>
+                        </div>
 
 
-                        <style>
-                            input[type=text],
-                            input[type=service],
-                            input[type=date],
-                            select {
-                                width: 100%;
-                                padding: 12px 20px;
-                                margin: 8px 0;
-                                display: inline-block;
-                                border: 1px solid #ccc;
-                                border-radius: 4px;
-                                box-sizing: border-box;
-                            }
+                        <div>
+                            <h2>Status of the room</h2>
+                            <div id="checkboxes">
+                                <label>some label</label>
+                                <ul>
+                                    <li><input type="checkbox"> Cleaned </li>
+                                    <li><input type="checkbox"> Mini Fridge Restocked</li>
+                                    <li><input type="checkbox"> Toiletries Restocked</li>
+                                </ul>
 
-                            .button {
-                                padding: 2px;
-                                font: bold .6em sans-serif;
-                                border: 2px solid rgb(5, 181, 187);
-                                border-radius: 5px;
-                                cursor: pointer;
-                            }
-
-                            button:hover,
-                            button:focus {
-                                outline: none;
-                                background: rgb(174, 193, 230);
-                                color: #FFF;
-                            }
-
-                            input[type=submit] {
-                                width: 100%;
-                                background-color: #659bb4;
-                                color: white;
-                                padding: 14px 20px;
-                                margin: 8px 0;
-                                border: none;
-                                border-radius: 4px;
-                                cursor: pointer;
-                            }
-
-                            input[type=submit]:hover {
-                                background-color: #367383;
-                            }
-
-                            table {
-                                font-family: arial, sans-serif;
-                                border-collapse: collapse;
-                                width: 100%;
-                            }
-
-                            td,
-                            th {
-                                border: 1px solid #7e4242;
-                                text-align: left;
-                                padding: 8px;
-                            }
-
-                            tr:nth-child(even) {
-                                background-color: #dddddd;
-                            }
-                        </style>
-
-
-
-                        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-                        <body>
-                            <div>
-                                <form action=" ">
-                                    <label for="Book_id">Booking ID:</label>
-                                    <input type="text" id="book_id" name="book_id"><br><br>
-
-                                    <label for="start">Check-in date:</label>
-
-                                    <input type="date" id="checkin_date" name="checkin_date" value="2021-05-08"
-                                        min="2021-05-01" max="2021-12-31">
-
-                                    <input type="submit" value="Submit">
-                                </form>
+                                <input type="submit" name="Submit" value="Done">
                             </div>
-
-                            <div>
-                                <h2>Customer Information</h2>
-
-                                <form>
-                                    <label for="fname">First name:</label><br>
-                                    <input type="text" id="fname" name="fname" value=""><br>
-
-                                    <label for="lname">Last name:</label><br>
-                                    <input type="text" id="lname" name="lname" value=""><br>
-
-                                    <label for="address">Address:</label><br>
-                                    <input type="text" id="address" name="address" value=""><br>
-
-                                    <label for="Email_add">Email Address:</label><br>
-                                    <input type="text" id="Email_add" name="Email_add" value=""><br>
-
-                                    <label for="Phone_no">Mobile Number:</label><br>
-                                    <input type="text" id="Phone_no" name="Phone_no" value=""><br>
-
-                                </form>
-                            </div>
-
-                            <div>
-                                <h2>Rooms available</h2>
-                                <table>
-                                    <tr>
-                                        <th>Room No.</th>
-                                        <th>Room Catrgory</th>
-                                        <th>Bed size</th>
-                                        <th>No. of beds</th>
-                                        <th>Type</th>
-                                        <th>Price</th>
-
-                                    </tr>
-                                    <tr>
-                                        <!--for loop-->
-                                        <td>724</td>
-                                        <td>Princess Suit</td>
-                                        <td>QueenSize</td>
-                                        <td>1</td>
-                                        <td>VIP</td>
-                                        <td>3000 Euro</td>
-                                    </tr>
-
-                                </table>
-                            </div>
+                        </div>
 
 
-                            <div>
-                                <h2>Status of the room</h2>
-                                <div id="checkboxes">
-                                    <label>some label</label>
-                                    <ul>
-                                        <li><input type="checkbox"> Cleaned </li>
-                                        <li><input type="checkbox"> Mini Fridge Restocked</li>
-                                        <li><input type="checkbox"> Toiletries Restocked</li>
-                                    </ul>
-
-                                    <input type="submit" name="Submit" value="Done">
-                                </div>
-                            </div>
-
-                            <!------------Services---------------->
+                        <div class="clear"></div>
                     </div>
                 </div>
-                <div class="clear"></div>
             </div>
         </div>
+
         <!-- footer -->
         <div id="footer">
-           
+
             <div class="wrapper">
                 <div class="fleft">Copyright &copy; 2009 <a href="#">Name Here</a>. All Rights Reserved</div>
             </div>
