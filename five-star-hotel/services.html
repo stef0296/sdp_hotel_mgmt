@@ -109,73 +109,54 @@
         <div class="content">
           <div class="indent">
             <!---------------------------->
-            <form>
-              <label for="Book_id">Booking ID:</label>
-              <input type="text" id="book_id" name="book_id"><br>
-              <br>
-              <label for="room_no">Room No.:</label>
-              <input type="text" id="room_no" name="room_no"><br><br>
 
-              <div>
-                <label for="Service">Services:</label>
-                <select id="service"></select>
-                
-                <option value="0">Online</option>
-                <script>
-                  var select = document.getElementById("service");
+            <label for="Book_id">Booking ID:</label>
+            <input type="text" id="book_id" name="book_id"><br>
+            <br>
+            <label for="room_no">Room No.:</label>
+            <input type="text" id="room_no" name="room_no"><br><br>
+            <br>
+            <div>
+              <label for="Service">Services:</label>
+              <select id="service"></select>
+            </div>
 
-                  let status = [
-                    {
-                      id: 0,
-                      label: 'Online',
-                    },
-                    {
-                      id: 1,
-                      label: 'Offline',
-                    }
-                  ]
+            <label for="PriceforService">Price of Services :
 
-                  arr = ["food", "drinks", "taxi", "laundry"];
-                  for (var i = 0; i < arr.length; i++) {
+              <u id="price"></u> €</label>
+            <br>
+            <br>
+            <button type="button" onclick="service()">Done</button>
 
-                    var option = document.createElement("OPTION");
-                    txt = document.createTextNode(arr[i]);
-                    option.appendChild(txt);
-                    select.insertBefore(option, select.lastChild);
-                  }
-                </script>
-              </div>
+</body>
 
-              <label for="service price">Service Charge</label>
-              <input type="text" id="room_no" name="room_no"><br><br>
+<script src='./services.js'>
+</script>
 
-              <br>
-              <br>
-              <input type="submit" value="Done">
 
-              <!------------Services---------------->
-          </div>
-        </div>
-        <div class="clear"></div>
-      </div>
-    </div>
-    <!-- footer -->
-    <div id="footer">
-      <ul class="nav">
-        <li><a href="#">Home</a>|</li>
-        <li><a href="#">Services</a>|</li>
-        <li><a href="#">Gallery</a>|</li>
-        <li><a href="#">Restaurant</a>|</li>
-        <li><a href="#">Testimonials</a>|</li>
-        <li><a href="#">Booking</a></li>
-      </ul>
-      <div class="wrapper">
-        <div class="fleft">Copyright &copy; 2009 <a href="#">Name Here</a>. All Rights Reserved</div>
-        <div class="fright">Designed by TemplateMonster - <a href="http://www.templatemonster.com/">website
-            templates</a> provider</div>
-      </div>
-    </div>
+<!------------Services---------------->
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<!-- footer -->
+<div id="footer">
+  <ul class="nav">
+    <li><a href="#">Home</a>|</li>
+    <li><a href="#">Services</a>|</li>
+    <li><a href="#">Gallery</a>|</li>
+    <li><a href="#">Restaurant</a>|</li>
+    <li><a href="#">Testimonials</a>|</li>
+    <li><a href="#">Booking</a></li>
+  </ul>
+  <div class="wrapper">
+    <div class="fleft">Copyright &copy; 2009 <a href="#">Name Here</a>. All Rights Reserved</div>
+    <div class="fright">Designed by TemplateMonster - <a href="http://www.templatemonster.com/">website
+        templates</a> provider</div>
   </div>
+</div>
+</div>
 </body>
 
 </html>
