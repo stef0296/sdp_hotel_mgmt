@@ -23,7 +23,6 @@ serviceArr.forEach((service) => {
     option.text = service.service_desc;
     select.appendChild(option, select.lastChild);
 });
-document.getElementById('price').innerText = serviceArr[0].service_price;
 
 function service() {
     var book_id = document.getElementById('book_id').value;
@@ -31,11 +30,4 @@ function service() {
     console.log(book_id);
     console.log(room_no)
     console.log(document.getElementById('service').value);
-}
-
-function showPrice() {
-    var price = document.getElementById('price');
-    let val = document.getElementById('service').value;
-    let serv = serviceArr.find((service) => service.service_id == val);
-    price.innerText = serv.service_price;
 }
