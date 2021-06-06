@@ -49,14 +49,37 @@
     <!-- content -->
     <div id="content">
       <div class="wrapper">
-       S
+        <div class="aside maxheight">
+
+        <!-- box begin -->
+        <div class="box maxheight">
+          <div class="inner">
+            <h3>Reservation</h3>
+            <div>
+              <label for="hotel_id">Hotel</label>
+              <input type="text" id="hotel_id" name="hotel_id"><br><br>
+
+              <label for="start">Check-in date</label>
+
+              <input type="date" id="checkin_date" name="checkin_date" value="08-06-2021" min="08-06-021"
+                max="2021-12-31">
+
+              <label for="start">Check-Out date</label>
+
+              <input type="date" id="checkout_date" name="checkout_date" value="16-06-2021" min="16-06-2021"
+                max="2021-12-31">
+
+              <input type="submit" value="Submit">
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- box end -->
         <div class="content">
           <div class="indent">
             <h2>Welcome</h2>
             <!----Second table----->
             <style>
-            
-
               input[type=text],
               input[type=email],
               input[type=date],
@@ -101,7 +124,7 @@
                 background-color: #367383;
               }
             </style>
-            
+
             <div class="desk">
               <form class="reception">
                 <label for="fname">First Name
@@ -121,39 +144,21 @@
                 <label for="phn">Contact Number</label>
                 <input type="tel" id="phn" name="phn" pattern="[0-9]"><br>
 
-              <div class="field">
-                <label for="bookingmode">Booking Mode:</label>
-                <select name="bookingmode" id="mode">
-                  <option value="#"></option>
-                  <option  value="0">online</option>
-                  <option  value="1">offline</option>
-                </select>
-              </div>
+                <div class="field">
+                  <label for="bookingmode">Booking Mode:</label>
+                  <select name="bookingmode" id="mode">
+                    <option value="#"></option>
+                    <option value="0">online</option>
+                    <option value="1">offline</option>
+                  </select>
+                </div>
 
-            </form>
+              </form>
 
               <br>
               <br>
 
               <!------------CHEK IN N SUBMIT--------->
-              <div class="field">
-                <label>Check In:</label>
-                <input type="date" id="checkin_date" name="checkin_date" value="2021-05-08"
-                min="2021-05-01" max="2021-12-31">
-
-              </div>
-              <br>
-              <br>
-
-              <div class="field">
-                <label>Check Out:</label>
-                <input type="date" id="checkout_date" name="checkout_date" value="2021-25-08"
-                min="2021-05-01" max="2021-12-31">
-               </div>
-<br>
-              <div>
-                <div class="button"><span><span><a href="#">Submit</a></span></span></div>
-              </div>
             </div>
             <br>
             <!------------------------------------------->
@@ -210,30 +215,23 @@
                 <td></td>
                 <td></td>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+             
             </table>
             <!-------------->
             <div class="field">
               <label for="status">Booking Status:</label>
               <select name="status" id="status">
                 <option value="#"></option>
-                <option  id="0">confirmed</option>
-                <option  id="1">cancel</option>
-                <option  id="2">Pending</option>
+                <option id="0">confirmed</option>
+                <option id="1">cancel</option>
+                <option id="2">Pending</option>
               </select>
             </div>
             <br>
             <br>
 
             <!------------------------------->
-            <div class="button"><span><span><a href="#">Check Availability</a></span></span></div>
+            <input type="submit" value="Submit">
 
           </div>
         </div>
@@ -243,8 +241,8 @@
     <div id="footer">
       <div class="wrapper">
         <div class="fleft">Copyright &copy; 2009 <a href="#">Name Here</a>. All Rights Reserved</div>
+      </div>
     </div>
-  </div>
 </body>
 
 </html>

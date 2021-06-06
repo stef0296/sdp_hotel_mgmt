@@ -67,7 +67,7 @@
                 border-radius: 5px;
                 cursor: pointer;
             }
-
+            
             button:hover,
             button:focus {
                 outline: none;
@@ -116,22 +116,18 @@
                     <!-- box begin -->
                     <div class="box maxheight">
                         <div class="inner">
-                            <h3>Reservation</h3>
                             <div>
-                                <label for="hotel_id">Hotel</label>
-                                <input type="text" id="hotel_id" name="hotel_id"><br><br>
 
-                                <label for="start">Check-in date:</label>
+                                <label for="Book_id">Booking ID:</label>
+                                <input type="text" id="book_id" name="book_id"><br><br>
 
-                                <input type="date" id="checkin_date" name="checkin_date" value="08-06-2021"
-                                    min="08-06-021" max="2021-12-31">
+                                <label for="cin_date">Check-in date:</label>
 
-                                <label for="start">Check-Out date:</label>
+                                <input type="date" id="checkin_date" name="checkin_date" value="2021-05-08"
+                                    min="2021-05-01" max="2021-12-31">
 
-                                <input type="date" id="checkout_date" name="checkout_date" value="16-06-2021"
-                                    min="16-06-2021" max="2021-12-31">
+                                <button onclick="Checkin()" type="button" value="Submit">Submit</button>
 
-                                <input type="submit" value="Submit">
                             </div>
                         </div>
                     </div>
