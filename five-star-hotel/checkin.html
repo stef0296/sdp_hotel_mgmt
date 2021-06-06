@@ -133,23 +133,23 @@
 
                         <body>
                             <div>
-                                <form action=" ">
+                                
                                     <label for="Book_id">Booking ID:</label>
                                     <input type="text" id="book_id" name="book_id"><br><br>
 
-                                    <label for="start">Check-in date:</label>
+                                    <label for="cin_date">Check-in date:</label>
 
                                     <input type="date" id="checkin_date" name="checkin_date" value="2021-05-08"
                                         min="2021-05-01" max="2021-12-31">
 
-                                    <input type="submit" value="Submit">
-                                </form>
+                                        <button onclick="Checkin()" type="button" value="Submit">Submit</button>
+                                
                             </div>
 
                             <div>
                                 <h2>Customer Information</h2>
 
-                                <form>
+                                
                                     <label for="fname">First name:</label><br>
                                     <input type="text" id="fname" name="fname" value=""><br>
 
@@ -165,11 +165,11 @@
                                     <label for="Phone_no">Mobile Number:</label><br>
                                     <input type="text" id="Phone_no" name="Phone_no" value=""><br>
 
-                                </form>
+                                
                             </div>
 
                             <div>
-                                <h2>Rooms available</h2>
+                                <h2>Rooms Reserved</h2>
                                 <table>
                                     <tr>
                                         <th>Room No.</th>
@@ -197,17 +197,17 @@
                             <div>
                                 <h2>Status of the room</h2>
                                 <div id="checkboxes">
-                                    <label>some label</label>
-                                    <ul>
-                                        <li><input type="checkbox"> Cleaned </li>
-                                        <li><input type="checkbox"> Mini Fridge Restocked</li>
-                                        <li><input type="checkbox"> Toiletries Restocked</li>
-                                    </ul>
-
-                                    <input type="submit" name="Submit" value="Done">
+                                  <label>Status of the room</label>
+                                  <ul>
+                                    <li><input type="checkbox" id="Clean"> Cleaned </li>
+                                    <li><input type="checkbox" id="Fridge"> Mini Fridge Restocked</li>
+                                    <li><input type="checkbox" id="Maintain"> Toiletries Restocked</li>
+                                  </ul>
+                            
+                                  <input type="submit" name="Submit" value="Done" onclick="CleanCheck()">
                                 </div>
-                            </div>
-
+                              </div>
+                              <script src='./checkin.js'></script>
                             <!------------Services---------------->
                     </div>
                 </div>
