@@ -82,7 +82,7 @@ async function addBooking() {
     let status = document.getElementById('status').value;
 
     let tbodyRef = document.getElementById('avlRooms').getElementsByTagName('tbody')[0];
-    console.log(tbodyRef.rows.length);
+
     for(let i = 0; i < tbodyRef.rows.length; i++) {
         let children = tbodyRef.rows.item(i).cells.item(6).children;
         for(let child of children) {

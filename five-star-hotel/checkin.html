@@ -6,12 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="layout.css" rel="stylesheet" type="text/css" />
+    <link href="css/checkin.css" rel="stylesheet" type="text/css" />
     <script src="maxheight.js" type="text/javascript"></script>
-    <!--[if lt IE 7]>
-<link href="ie_style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="ie_png.js"></script>
-<script type="text/javascript">ie_png.fix('.png, #header .row-2, #header .nav li a, #content, .gallery li');</script>
-<![endif]-->
 </head>
 
 <body id="page4" onload="new ElementMaxHeight();">
@@ -46,68 +42,6 @@
             </div>
         </div>
         <!-- content -->
-        <style>
-            input[type=text],
-            input[type=service],
-            input[type=date],
-            select {
-                width: 100%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-            }
-
-            .button {
-                padding: 2px;
-                font: bold .6em sans-serif;
-                border: 2px solid rgb(5, 181, 187);
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            
-            button:hover,
-            button:focus {
-                outline: none;
-                background: rgb(174, 193, 230);
-                color: #FFF;
-            }
-
-            input[type=submit] {
-                width: 100%;
-                background-color: #659bb4;
-                color: white;
-                padding: 14px 20px;
-                margin: 8px 0;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-
-            input[type=submit]:hover {
-                background-color: #367383;
-            }
-
-
-            table {
-                font-family: arial, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
-
-            td,
-            th {
-                border: 1px solid #7e4242;
-                text-align: left;
-                padding: 8px;
-            }
-
-            tr:nth-child(even) {
-                background-color: #dddddd;
-            }
-        </style>
 
 
         <div id="content">
@@ -135,10 +69,10 @@
 
                                 <label for="cin_date">Check-in date:</label>
 
-                                <input type="date" id="checkin_date" name="checkin_date" value="2021-05-08"
+                                <input type="date" id="checkin_date" name="checkin_date" value="2021-06-08"
                                     min="2021-05-01" max="2021-12-31">
 
-                                <button onclick="Checkin()" type="button" value="Submit">Submit</button>
+                                <button onclick="checkin()" type="button">Submit</button>
 
                             </div>
                         </div>
@@ -151,44 +85,37 @@
                         <div>
 
                             <label for="fname">First name:</label><br>
-                            <input type="text" id="fname" name="fname" value=""><br>
+                            <input type="text" id="fname" name="fname" readonly><br>
 
                             <label for="lname">Last name:</label><br>
-                            <input type="text" id="lname" name="lname" value=""><br>
+                            <input type="text" id="lname" name="lname" readonly><br>
 
                             <label for="address">Address:</label><br>
-                            <input type="text" id="address" name="address" value=""><br>
+                            <input type="text" id="address" name="address" readonly><br>
 
                             <label for="Email_add">Email Address:</label><br>
-                            <input type="text" id="Email_add" name="Email_add" value=""><br>
+                            <input type="text" id="email" name="Email_add" readonly><br>
 
                             <label for="Phone_no">Mobile Number:</label><br>
-                            <input type="text" id="Phone_no" name="Phone_no" value=""><br>
+                            <input type="text" id="phone_no" name="Phone_no" readonly><br>
 
                         </div>
 
                         <div>
                             <h2>Rooms available</h2>
-                            <table>
-                                <tr>
-                                    <th>Room No.</th>
-                                    <th>Room Catrgory</th>
-                                    <th>Bed size</th>
-                                    <th>No. of beds</th>
-                                    <th>Type</th>
-                                    <th>Price</th>
-
-                                </tr>
-                                <tr>
-                                    <!--for loop-->
-                                    <td>724</td>
-                                    <td>Princess Suit</td>
-                                    <td>QueenSize</td>
-                                    <td>1</td>
-                                    <td>VIP</td>
-                                    <td>3000 Euro</td>
-                                </tr>
-
+                            <table id="room_table">
+                                <thead>
+                                    <tr>
+                                        <th>Room No.</th>
+                                        <th>Type</th>
+                                        <th>Category</th>
+                                        <th>Bed size</th>
+                                        <th>No. of beds</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
                             </table>
                         </div>
 
@@ -198,16 +125,14 @@
                             <div id="checkboxes">
                                 <label>some label</label>
                                 <ul>
-                                    <li><input type="checkbox"> Cleaned </li>
-                                    <li><input type="checkbox"> Mini Fridge Restocked</li>
-                                    <li><input type="checkbox"> Toiletries Restocked</li>
+                                    <li><input id="clean_status" type="checkbox"> Cleaned </li>
+                                    <li><input id="fridge_status" type="checkbox"> Mini Fridge Restocked</li>
+                                    <li><input id="maint_status" type="checkbox"> Toiletries Restocked</li>
                                 </ul>
 
-                                <input type="submit" name="Submit" value="Done">
+                                <button type="button" onclick="processCheckin()">Submit</button>
                             </div>
                         </div>
-
-
                         <div class="clear"></div>
                     </div>
                 </div>
@@ -223,5 +148,7 @@
         </div>
     </div>
 </body>
+<script src="./checkin.js"></script>
+<script src='./http.util.js'></script>
 
 </html>
