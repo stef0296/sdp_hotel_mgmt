@@ -44,17 +44,13 @@
         <!-- content -->
 
 
-        <div id="content">
-            <div class="wrapper">
-                <div class="aside maxheight">
-                </div>
-                <div class="content">
+        <div id="content" style="display: flex; flex-direction: row;">
+            <div class="wrapper" style="width: 30%;">
+                <div style="margin-right: 20px;">
                     <div class="indent">
                         <!--------------check in-------------->
-
-
                         <style src="./checkin.css">
-                           
+
                         </style>
 
 
@@ -66,84 +62,81 @@
 
                                 <label for="Book_id">Booking ID:</label>
                                 <input type="text" id="book_id" name="book_id"><br><br>
-
-                                <label for="cin_date">Check-in date:</label>
-
-                                <input type="date" id="checkin_date" name="checkin_date" value="2021-06-08"
-                                    min="2021-05-01" max="2021-12-31">
-
                                 <button onclick="checkin()" type="button">Submit</button>
 
                             </div>
-                        </div>
-                    </div>
-                    <!-- box end -->
-                </div>
-                <div class="content">
-                    <div class="indent">
-                        <h2>Customer Information</h2>
-                        <div>
-
-                            <label for="fname">First name:</label><br>
-                            <input type="text" id="fname" name="fname" readonly><br>
-
-                            <label for="lname">Last name:</label><br>
-                            <input type="text" id="lname" name="lname" readonly><br>
-
-                            <label for="address">Address:</label><br>
-                            <input type="text" id="address" name="address" readonly><br>
-
-                            <label for="Email_add">Email Address:</label><br>
-                            <input type="text" id="email" name="Email_add" readonly><br>
-
-                            <label for="Phone_no">Mobile Number:</label><br>
-                            <input type="text" id="phone_no" name="Phone_no" readonly><br>
-
-                        </div>
-
-                        <div>
-                            <h2>Rooms available</h2>
-                            <table id="room_table">
-                                <thead>
-                                    <tr>
-                                        <th>Room No.</th>
-                                        <th>Type</th>
-                                        <th>Category</th>
-                                        <th>Bed size</th>
-                                        <th>No. of beds</th>
-                                        <th>Price</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-
-
-                        <div>
-                            <h2>Status of the room</h2>
-                            <div id="checkboxes">
-                                <label>some label</label>
-                                <ul>
-                                    <li><input id="clean_status" type="checkbox"> Cleaned </li>
-                                    <li><input id="fridge_status" type="checkbox"> Mini Fridge Restocked</li>
-                                    <li><input id="maint_status" type="checkbox"> Toiletries Restocked</li>
-                                </ul>
-
-                                <button type="button" onclick="processCheckin()">Submit</button>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
                     </div>
                 </div>
+                <!-- box end -->
             </div>
-        </div>
+            <div class="content">
+                <div class="indent">
+                    <label for="cin_date">Check-in date:</label>
 
-        <!-- footer -->
-        <div id="footer">
+                    <input type="date" id="checkin_date" name="checkin_date" value="2021-06-08" min="2021-05-01"
+                        max="2021-12-31">
+                    <h2>Customer Information</h2>
+                    <div>
 
-            <div class="wrapper">
-                <div class="fleft">Copyright &copy; 2009 <a href="#">Name Here</a>. All Rights Reserved</div>
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname" readonly><br>
+
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname" readonly><br>
+
+                        <label for="address">Address:</label><br>
+                        <input type="text" id="address" name="address" readonly><br>
+
+                        <label for="Email_add">Email Address:</label><br>
+                        <input type="text" id="email" name="Email_add" readonly><br>
+
+                        <label for="Phone_no">Mobile Number:</label><br>
+                        <input type="text" id="phone_no" name="Phone_no" readonly><br>
+                    </div>
+                    <div style="display: flex; flex-direction: row;">
+                        <div style="margin-right: 10px;">
+                            <label for="arr_label">Arrival Date:</label>
+                            <input type="text" id="arr_date" name="arr_label" readonly>
+                        </div>
+                        <div>
+                            <label for="dep_label">Departure Date:</label>
+                            <input type="text" id="dep_date" name="dep_label" readonly>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>Rooms reserved</h2>
+                        <table id="room_table">
+                            <thead>
+                                <tr>
+                                    <th>Room No.</th>
+                                    <th>Type</th>
+                                    <th>Category</th>
+                                    <th>Bed size</th>
+                                    <th>No. of beds</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div>
+                        <h2>Status of the room</h2>
+                        <div id="checkboxes">
+                            <ul>
+                                <li><input id="clean_status" type="checkbox"> Cleaned </li>
+                                <li><input id="fridge_status" type="checkbox"> Mini Fridge Restocked</li>
+                                <li><input id="maint_status" type="checkbox"> Toiletries Restocked</li>
+                            </ul>
+
+                            <button type="button" onclick="processCheckin()">Submit</button>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
             </div>
         </div>
     </div>

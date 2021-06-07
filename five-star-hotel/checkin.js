@@ -15,6 +15,8 @@ async function checkin() {
   document.getElementById('address').value = data[0][0].book_cust_address;
   document.getElementById('email').value = data[0][0].book_cust_email;
   document.getElementById('phone_no').value = data[0][0].book_cust_ph_num;
+  document.getElementById('arr_date').value = data[0][0].arr_date;
+  document.getElementById('dep_date').value = data[0][0].dep_date;
 
   let table = document.getElementById('room_table').getElementsByTagName('tbody')[0];
 
