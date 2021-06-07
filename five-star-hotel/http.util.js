@@ -6,7 +6,7 @@ async function getData(procName, procParams) {
         fetch(url)
             .then(async res => {
                 let data = await res.json();
-                 console.log('res', data);
+                //  console.log('res', data);
                 resolve(data);
             })
             .catch(err => {

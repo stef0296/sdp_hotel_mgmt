@@ -1,223 +1,146 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
-<title>Charriott</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="style.css" rel="stylesheet" type="text/css" />
-<link href="layout.css" rel="stylesheet" type="text/css" />
-<script src="maxheight.js" type="text/javascript"></script>
-<!--[if lt IE 7]>
-<link href="ie_style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="ie_png.js"></script>
-<script type="text/javascript">ie_png.fix('.png, #header .row-2, #header .nav li a, #content, .gallery li');</script>
-<![endif]-->
+  <title>Charriott</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="layout.css" rel="stylesheet" type="text/css" />
+  <link href="css/checkout.css" rel="stylesheet" type="text/css" />
+  <script src="maxheight.js" type="text/javascript"></script>
 </head>
+
 <body id="page1" onload="new ElementMaxHeight();">
-<div id="main">
-  <!-- header -->
-  <div id="header">
-    <div class="row-1">
-      <div class="wrapper">
-        <div class="logo">
-          <h1><a href="#">Charriott</a></h1>
-          <em>Hotel</em> <strong>True Luxury</strong> </div>
-      </div>
-    </div>
-    <div class="row-2">
-      <div class="indent">
-        <!-- header-box begin -->
-        <div class="header-box">
-          <div class="inner">
-            <ul class="nav">
-              <li><a href="booking.html">Booking</a></li>
-              <li><a href="checkin.html">Check In</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="checkout.html" class="current">Check Out</a></li>
-              <li><a href="#">#</a></li>
-            </ul>
+  <div id="main">
+    <!-- header -->
+    <div id="header">
+      <div class="row-1">
+        <div class="wrapper">
+          <div class="logo">
+            <h1><a href="#">Charriott</a></h1>
+            <em>Hotel</em> <strong>True Luxury</strong>
           </div>
         </div>
-        <!-- header-box end -->
+      </div>
+      <div class="row-2">
+        <div class="indent">
+          <!-- header-box begin -->
+          <div class="header-box">
+            <div class="inner">
+              <ul class="nav">
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="checkin.html">Check In</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="checkout.html" class="current">Check Out</a></li>
+                <li><a href="#">#</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- header-box end -->
+        </div>
       </div>
     </div>
-  </div>
-  <!-- content -->
+    <!-- content -->
 
-<!-------STYLECODE---------->
-<style>
-    input[type=text],input[type=service], select {
-width: 100%;
-padding: 12px 20px;
-margin: 8px 0;
-display: inline-block;
-border: 1px solid #ccc;
-border-radius: 4px;
-box-sizing: border-box;
-}
-
-.button{
-padding      : 2px;
-font         : bold .6em sans-serif;
-border       : 2px solid rgb(5, 181, 187);
-border-radius: 5px;
-cursor       : pointer;
-}
-
-button:hover,
-button:focus {
-outline     : none;
-background  : rgb(174, 193, 230);
-color       : #FFF;
-}    
-input[type=submit] {
-width: 100%;
-background-color: #659bb4;
-color: white;
-padding: 14px 20px;
-margin: 8px 0;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-}
-
-input[type=submit]:hover {
-background-color: #367383;
-}
-
-table {
-              font-family: arial, sans-serif;
-              border-collapse: collapse;
-              width: 100%;
-            }
-            
-            td, th {
-              border: 1px solid #7e4242;
-              text-align: left;
-              padding: 8px;
-            }
-            
-            tr:nth-child(even) {
-              background-color: #dddddd;
-            }
-           
-</style>
-
-<!-------STYLECODE---- END------>
-
-
-  <div id="content">
-    <div class="wrapper">
+    <div id="content">
+      <div class="wrapper">
         <!-- box begin -->
         <div>
-         
-          <label for="Book_id">Booking ID:</label>
-          <input type="text" id="book_id" name="book_id"><br><br>
-          
-     
-      <label for="room_no">Room No.:</label>
-      <input type="text" id="room_id" name="room_no"><br><br>
 
-  
-              <button onclick="Checkout()" type="button" value="Submit">Submit</button>
-         
-      </div>
-         
-      <br>
+          <label for="Book_id">Booking ID:</label>
+          <input type="text" id="book_id" name="book_id" readonly><br><br>
+
+
+          <label for="room_no">Room No.:</label>
+          <input type="text" id="room_no" name="room_no"><br><br>
+
+
+          <button onclick="getCheckoutDetails()" type="button">Submit</button>
+
+        </div>
+
+        <br>
+        <div>
+          <h2>Customer Rooms Details</h2>
+          <table id="room_table">
+            <thead>
+              <tr>
+                <th>Room No.</th>
+                <th>Price</th>
+                <th>Days</th>
+                <th>Total Price</th>
+
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <br>
+          <br>
+
           <div>
-              <h2>Rooms Details of the Customer</h2>
-              <table>
-                  <tr>
-                    <th>Room No.</th>
-                    <th>Price</th>
-                    <th>Days</th>
-                    <th>Total Price</th>
-                    
-                  </tr>
-                  <tr> <!--for loop-->
-                    <td>724</td>
-                    <td>Princess Suit</td>
-                    <td>QueenSize</td>
-                    <td>1</td>
-                    
-                  </tr>   
-                </table>
-                <br>
-                <br>
-              
-                <div>
-                <label for="amount_room"><h4>Total Amount for Rooms: <u>100000 Euro</u> </h4></label>
-               <!--  <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
-                  <input type="range" id="a" value="50">
-                  +<input type="number" id="b" value="25">
-                  =<output name="x" for="a b"></output>
-                  </form>  -->
-              
-              </div>
-                
+            <label for="amount_room">
+              <h4>Total Amount for Rooms: <u id="room_total_price">Eur. 0</u> </h4>
+            </label>
           </div>
-  <br>
-           <div class="vas">
-              <h2>Value Added Services Used by the Customer</h2>
-              <table>
-                  <tr>
-                    <th>VAS Code.</th>
-                    <th>Description</th>
-                    <th>Price</th>  
-                  </tr>
-  
-                  <tr> <!--for loop-->
-                    <td>123</td>
-                    <td>Ordered Cocktail dress</td>
-                    <td>1000 Euro</td>   
-                  </tr>
-                 
-                </table>
-           </div>
-  <br>
-           <div>
-              <label for="amount_vas"><h4>Total Amount for Value Added Services: <u>100000 Euro</u> </h4></label>
-             <!--  <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
-                <input type="range" id="a" value="50">
-                +<input type="number" id="b" value="25">
-                =<output name="x" for="a b"></output>
-                </form>  -->
-            
-            </div>
-  
-                                       
-            <div>
-              <h2>Final Bill</h2>
-              <table>
-                  <tr>
-                    <th>Grand Total for Rooms</th>
-                    <th>Discount %</th>
-                    <th>Value Added Services Total Amount</th>  
-                  </tr>
-  
-                  <tr> <!--for loop-->
-                    <td>10000</td>
-                    <td>10%</td>
-                    <td>1000</td>  
-                  
-                  </tr>
-                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td>Total Amount Payable</td>
-                  <td> </td> 
-                 </tr>
-                </table>
-           </div>  
-           <script src='./checkout.js'></script>
-  <!---------Refined CheckOut-------->
-  </div>
-  <!-- footer -->
-  <div id="footer">
-   
-    <div class="wrapper">
-      <div class="fleft">Copyright &copy; 2009 <a href="#">Name Here</a>. All Rights Reserved</div>
+
+        </div>
+        <br>
+        <div class="vas">
+          <h2>Value Added Services Used by the Customer</h2>
+          <table id="vas_table">
+            <thead>
+              <tr>
+                <th>VAS Code.</th>
+                <th>Description</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <br>
+        <div>
+          <label for="amount_vas">
+            <h4>Total Amount for Value Added Services: <u id="vas_total">Eur. 0</u> </h4>
+          </label>
+        </div>
+
+
+        <div>
+          <h2>Final Bill</h2>
+          <table>
+            <tr>
+              <td>Room Price</td>
+              <td id="room_gr_tot"></td>
+            </tr>
+            <tr>
+              <td>Discount on Rooms</td>
+              <td id="room_disc"></td>
+            </tr>
+            <tr>
+              <td>Value Added Services</td>
+              <td id="vas_gr_total"></td>
+            </tr>
+            <tr>
+              <td>Grand Total</td>
+              <td id="gr_total"></td>
+            </tr>
+          </table>
+        </div>
+        <button onclick="processCheckout()" type="button">Checkout</button>
+        <!---------Refined CheckOut-------->
+      </div>
+      <!-- footer -->
+      <div id="footer">
+
+        <div class="wrapper">
+          <div class="fleft">Copyright &copy; 2009 <a href="#">Name Here</a>. All Rights Reserved</div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 </body>
+<script src='./checkout.js'></script>
+<script src="http.util.js"></script>
+
 </html>
