@@ -7,6 +7,7 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="layout.css" rel="stylesheet" type="text/css" />
   <script src="maxheight.js" type="text/javascript"></script>
+  <script src="http.util.js" type="text/javascript"></script>
   <!--[if lt IE 7]>
 <link href="ie_style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="ie_png.js"></script>
@@ -33,10 +34,11 @@
           <div class="header-box-small">
             <div class="inner">
               <ul class="nav">
-                <li><a href="booking.html">Check-In</a></li>
-                <!---- <li><a href="services.html">Services</a></li> -->
-                <li><a href="restaurant.html" class="current">Services</a></li>
-                <li><a href="index.html">Check Out</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="checkin.html"> Check In</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="checkout.html">Check Out</a></li>
+                <li><a href="#">#</a></li>
               </ul>
             </div>
           </div>
@@ -45,17 +47,7 @@
       </div>
     </div>
     <!-- content -->
-    <div id="content">
-      <div class="gallery">
-        <ul>
-          <li><a href="#"><img alt="" src="images/2page-img1.jpg" /></a></li>
-          <li><a href="#"><img alt="" src="images/2page-img2.jpg" /></a></li>
-          <li><a href="#"><img alt="" src="images/2page-img3.jpg" /></a></li>
-          <li><a href="#"><img alt="" src="images/2page-img4.jpg" /></a></li>
-          <li><a href="#"><img alt="" src="images/2page-img5.jpg" /></a></li>
-          <li><a href="#"><img alt="" src="images/2page-img6.jpg" /></a></li>
-        </ul>
-      </div>
+  
       <!-----------------Styling-->
 
       <style>
@@ -112,21 +104,16 @@
 
             <label for="Book_id">Booking ID:</label>
             <input type="text" id="book_id" name="book_id"><br>
-            <br>
-            <label for="room_no">Room No.:</label>
-            <input type="text" id="room_no" name="room_no"><br><br>
-            <br>
+            
+           <br>
             <div>
               <label for="Service">Services:</label>
               <select id="service"></select>
+             
             </div>
 
-            <label for="PriceforService">Price of Services :
-
-              <u id="price"></u> €</label>
             <br>
-            <br>
-            <button type="button" onclick="service()">Done</button>
+            <button type="button" onclick="addVas()">Done</button>
 
 </body>
 
@@ -142,18 +129,9 @@
 </div>
 <!-- footer -->
 <div id="footer">
-  <ul class="nav">
-    <li><a href="#">Home</a>|</li>
-    <li><a href="#">Services</a>|</li>
-    <li><a href="#">Gallery</a>|</li>
-    <li><a href="#">Restaurant</a>|</li>
-    <li><a href="#">Testimonials</a>|</li>
-    <li><a href="#">Booking</a></li>
-  </ul>
+  
   <div class="wrapper">
     <div class="fleft">Copyright &copy; 2009 <a href="#">Name Here</a>. All Rights Reserved</div>
-    <div class="fright">Designed by TemplateMonster - <a href="http://www.templatemonster.com/">website
-        templates</a> provider</div>
   </div>
 </div>
 </div>
